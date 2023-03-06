@@ -1,0 +1,36 @@
+.app-header {
+    display: flex;
+    height: 80px;
+    padding: 0 40px 0 40px;
+    border-bottom: 1px solid $border-color;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+
+    .menu-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+        background-color: $main-bgColor;
+        border: 1px solid $border-color;
+        height: rem(42px);
+        width: rem(77px);
+
+        &:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+        }
+    }
+
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1 1;
+
+    .add-guest-container {
+        display: flex;
+    }
+}

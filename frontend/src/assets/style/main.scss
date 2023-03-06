@@ -9,6 +9,11 @@
 @import "basics/layout";
 @import "basics/base";
 
+// pages
+@import "pages/place-index-page";
+
 //cmps 
 
 @import "cmps/app-header.scss";
+@import "cmps/place-index/place-list";
+@import "cmps/place-index/place-preview";

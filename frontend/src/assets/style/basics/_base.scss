@@ -3,11 +3,9 @@
 }
 
 html {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1.5;
   color: $main-color;
   background-color: $main-bgColor;
-  // TEST COLLAB
 }
 
 body {
@@ -60,6 +58,7 @@ button {
 .app {
   display: flex;
   flex-direction: column;
+  font-family: roboto;
   margin: 0;
   padding: 0;
   

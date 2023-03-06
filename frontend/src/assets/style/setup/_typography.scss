@@ -4,3 +4,22 @@
     // font-family: caveat;
     // src: url(../../fonts/Caveat/Caveat-Regular.ttf);
 // }
+
+@font-face {
+    font-family: cereal-bold;
+    src: url(../../fonts/cereal/AirbnbCereal_W_Bd.otf);
+    // src: url(src\assets\fonts\cereal\AirbnbCereal_W_Bd.otf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../../fonts/roboto/Roboto-Regular.ttf);
+    // src: url(src\assets\fonts\cereal\AirbnbCereal_W_Bd.otf);
+}
+@font-face {
+    font-family: cereal-regular;
+    src: url(../../fonts/cereal/AirbnbCereal_W_Md.otf);
+}
+@font-face {
+    font-family: cereal-light;
+    src: url(../../fonts/cereal/AirbnbCereal_W_Lt.otf);
+}

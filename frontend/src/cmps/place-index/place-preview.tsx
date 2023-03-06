@@ -1,21 +1,32 @@
-import { useEffect, useState } from "react"
-import { placeService } from "../../services/place.service"
-
-export function PlacePreview() {
-
-    const [places, setPlaces] = useState(null)
-
-    useEffect(() => {
-        loadWaps()
-    }, [])
-
-    function loadWaps() {
-        // setPlaces(placeService.getPlaces())
+interface Iplace {
+    place:{
+        _id: string,
+        name: string,
+        imgUrls: string[],
+        price: number,
+        loc: {
+            country: string,
+            countryCode: string,
+            city: string,
+            address: string,
+        },
     }
+}
+
+export function PlacePreview({place}: Iplace) {
+
 
     return (
         <div className="place-preview">
-            Hey
+            <div className="img-container">
+                <img className="preview-img" src={place.imgUrls[0]} />
+            </div>
+            <div className="info-container">
+                <h3 className="place-name">{place.name}</h3>
+                <p className="place-location">{`${place.loc.country}, ${place.loc.city}, ${place.loc.address}`}</p>
+                {/* <p className="dates">{place}</p> */}
+                <p className="place-price"><span>{place.price}</span> night</p>
+            </div>
         </div>
     )
 }

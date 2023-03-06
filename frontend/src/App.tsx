@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState<number>(0)
 
   return (
-    <div className="App">
+    <div className="app">
       <AppHeader />
       <main className='app-main-container'>
           <Routes>

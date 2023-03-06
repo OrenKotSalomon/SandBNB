@@ -5,6 +5,8 @@ export function AppHeader() {
         <section className='app-header'>
             <div className='logo-container'>
                 <img src={dempPic} alt="" />
+                <p className='brand-name'>AirBNB</p>
+
             </div>
 
             <div className='filter-container'>

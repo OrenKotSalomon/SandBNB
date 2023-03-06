@@ -4,7 +4,7 @@ import { Routes, Route, Router } from 'react-router'
 import routes from './routes'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState<number>(0)
 
   return (
     <div className="App">

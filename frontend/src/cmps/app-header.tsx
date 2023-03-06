@@ -1,10 +1,12 @@
+import { Avatar } from '@mui/material'
 import dempPic from '../assets/react.svg'
 
 export function AppHeader() {
     return (
         <section className='app-header'>
             <div className='logo-container'>
-                <img src={dempPic} alt="" />
+                {/* <img src={dempPic} alt="" /> */}
+                <Avatar alt="Remy Sharp" src={dempPic} />
                 <p className='brand-name'>AirBNB</p>
 
             </div>

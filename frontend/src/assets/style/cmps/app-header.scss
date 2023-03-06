@@ -8,18 +8,32 @@
     position: sticky;
     top: 0;
 
+    .logo-container {
+        display: flex;
+        gap: 5px;
+
+        .brand-name {
+            display: none;
+
+            @include for-wide-layout {
+                display: block;
+                padding-top: 10px;
+            }
+        }
+    }
+
     .menu-container {
         display: flex;
         align-items: center;
         gap: 10px;
-        border-radius: 20px;
+        border-radius: 25px;
         background-color: $main-bgColor;
         border: 1px solid $border-color;
         height: rem(42px);
         width: rem(77px);
 
         &:hover {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+            @include hover-shadow;
         }
     }
 
@@ -29,8 +43,23 @@
     display: flex;
     align-items: center;
     flex-grow: 1 1;
+    height: rem(48px);
+    border-radius: 25px;
+    border: 1px solid $border-color;
+    cursor: pointer;
+    transition: 0.3s;
+
+    button {
+
+        background-color: $main-bgColor;
+    }
 
     .add-guest-container {
         display: flex;
+        height: rem(32px);
+    }
+
+    &:hover {
+        @include hover-shadow;
     }
 }

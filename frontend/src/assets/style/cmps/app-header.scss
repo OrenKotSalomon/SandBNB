@@ -4,13 +4,19 @@
     padding: 0 40px 0 40px;
     border-bottom: 1px solid $border-color;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     position: sticky;
     top: 0;
 
     .logo-container {
         display: flex;
         gap: 5px;
+        flex: 1 0 140px;
+
+        img {
+            width: 50px;
+
+        }
 
         .brand-name {
             display: none;
@@ -20,6 +26,12 @@
                 padding-top: 10px;
             }
         }
+    }
+
+    .user-menu {
+        display: flex;
+        justify-content: end;
+        flex: 1 0;
     }
 
     .menu-container {
@@ -47,7 +59,9 @@
     border-radius: 25px;
     border: 1px solid $border-color;
     cursor: pointer;
+    flex: 0 1;
     transition: 0.3s;
+    padding: 0 24px;
 
     button {
 

@@ -54,18 +54,24 @@
 .btn-container {
     display: flex;
     align-items: center;
-    flex-grow: 1 1;
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 200px;
     height: rem(48px);
     border-radius: 25px;
     border: 1px solid $border-color;
     cursor: pointer;
-    flex: 0 1;
+    // flex: 0 1;
     transition: 0.3s;
     padding: 0 24px;
 
     button {
-
         background-color: $main-bgColor;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        min-width: 30px;
+        flex-grow: 1;
     }
 
     .add-guest-container {

@@ -55,8 +55,8 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
-    max-width: 400px;
-    min-width: 200px;
+    max-width: rem(400px);
+    min-width: rem(305px);
     height: rem(48px);
     border-radius: 25px;
     border: 1px solid $border-color;
@@ -67,9 +67,6 @@
 
     button {
         background-color: $main-bgColor;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         min-width: 30px;
         flex-grow: 1;
     }
@@ -81,6 +78,18 @@
         height: rem(32px);
         padding: 0;
         margin-inline-start: 15px;
+    }
+
+    .any-week {
+        @include header-text-wrap;
+    }
+
+    .any-where {
+        @include header-text-wrap;
+    }
+
+    .add-guest-txt {
+        @include header-text-wrap;
     }
 
     &:hover {

@@ -11,19 +11,19 @@ export function AppHeader() {
 
             </div>
 
-                {/* filter component soon */}
-                <div className='btn-container'>
-                    <button className='any-week'>Any week</button>
-                    {/* <div className='seperator'>|</div> */}
-                    <button className='any-where'>Any where</button>
-                    {/* <div className='seperator'>|</div> */}
-                    <button className='add-guest-container'>
-                        <div className='add-guest-txt'>
-                            Add guests
-                        </div>
-                        <SearchIcon color='success' />
-                    </button>
-                </div>
+            {/* filter component soon */}
+            <div className='btn-container'>
+                <button className='any-week'>Any week</button>
+                {/* <div className='seperator'>|</div> */}
+                <button className='any-where'>Any where</button>
+                {/* <div className='seperator'>|</div> */}
+                <button className='add-guest-container'>
+                    <div className='add-guest-txt'>
+                        Add guests
+                    </div>
+                    <SearchIcon color='success' />
+                </button>
+            </div>
 
             <div className="user-menu">
                 <button className="menu-container">

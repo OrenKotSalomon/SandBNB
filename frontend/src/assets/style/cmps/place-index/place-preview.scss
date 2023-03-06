@@ -1,17 +1,17 @@
-.place-preview{
-    .img-container{
+.place-preview {
+    font-family: roboto;
 
-        .preview-img{
+    .img-container {
+
+        .preview-img {
             aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 10px;
         }
     }
-  font-family: cereal-bold;
 
-
-    .place-price{
-        span{
+    .place-price {
+        span {
             font-weight: 700;
         }
     }

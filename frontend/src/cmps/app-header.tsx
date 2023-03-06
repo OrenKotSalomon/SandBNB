@@ -1,12 +1,12 @@
 import { Avatar } from '@mui/material'
 import dempPic from '../assets/react.svg'
+import SearchIcon from '@mui/icons-material/Search';
 
 export function AppHeader() {
     return (
         <section className='app-header'>
             <div className='logo-container'>
-                {/* <img src={dempPic} alt="" /> */}
-                <Avatar alt="Remy Sharp" src={dempPic} />
+                <img src={dempPic} alt="" />
                 <p className='brand-name'>AirBNB</p>
 
             </div>
@@ -22,7 +22,7 @@ export function AppHeader() {
                         <div className='add-guest-txt'>
                             Add guests
                         </div>
-                        <img src={dempPic} alt="" />
+                        <SearchIcon color='success' />
                     </button>
                 </div>
             </div>
@@ -30,7 +30,10 @@ export function AppHeader() {
             <div className="user-menu">
                 <button className="menu-container">
                     <div className="user-icon">
-                        <img src={dempPic} alt="" />
+                        <Avatar alt="Remy Sharp" src={dempPic}
+                            sx={{ width: 26, height: 26 }}
+                        />
+
                     </div>
                     <div className='user-bars'>---</div>
                 </button>

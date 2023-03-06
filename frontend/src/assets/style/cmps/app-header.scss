@@ -70,7 +70,11 @@
 
     .add-guest-container {
         display: flex;
+        align-items: center;
+        gap: 20px;
         height: rem(32px);
+        padding: 0;
+        margin-inline-start: 15px;
     }
 
     &:hover {

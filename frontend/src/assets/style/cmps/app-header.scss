@@ -14,6 +14,10 @@
         gap: 5px;
         flex: 1 0 140px;
 
+        @include for-wide-layout {
+            flex: 1 0;
+        }
+
         img {
             width: 50px;
 
@@ -55,8 +59,9 @@
 .btn-container {
     display: flex;
     align-items: center;
+    position: relative;
     flex-grow: 1;
-    max-width: rem(400px);
+    max-width: rem(352px);
     min-width: rem(305px);
     height: rem(48px);
     border-radius: 25px;
@@ -74,8 +79,8 @@
 
     .add-guest-container {
         display: flex;
+        margin: 0;
         align-items: center;
-        gap: 20px;
         height: rem(32px);
         padding: 0;
         margin-inline-start: 15px;
@@ -96,4 +101,17 @@
     &:hover {
         @include hover-shadow;
     }
+}
+
+.search-icon-header {
+    position: relative;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: rem(32px);
+    min-width: rem(32px);
+    background-color: $p-clr-header;
+    border-radius: 50%;
 }

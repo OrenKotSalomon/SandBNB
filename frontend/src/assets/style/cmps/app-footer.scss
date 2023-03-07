@@ -1,0 +1,24 @@
+.app-footer {
+    height: rem(67px);
+    background-color: $main-bgColor ;
+    position: sticky;
+    bottom: 0;
+    border-top: 1px solid $border-color;
+}
+
+.map-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .show-map-btn {
+        position: fixed;
+        bottom: 110px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: rem(134px);
+        height: rem(48px);
+
+    }
+}

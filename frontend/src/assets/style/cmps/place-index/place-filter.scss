@@ -13,7 +13,7 @@
 
     position: sticky;
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
     top: 80px;
     background-color: $main-bgColor;
@@ -24,12 +24,13 @@
         align-items: center;
         gap: 0.5rem;
         color: rgb(132, 132, 132);
-        padding: 0.5rem;
+        padding: 1rem 0;
         cursor: pointer;
         border-bottom: 3px solid $main-bgColor;
-        &:hover{
+
+        &:hover {
             color: black;
-border-bottom: 3px solid lightgray;
+            border-bottom: 3px solid lightgray;
         }
     }
 

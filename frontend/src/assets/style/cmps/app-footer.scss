@@ -16,9 +16,17 @@
         bottom: 110px;
         display: flex;
         align-items: center;
-        gap: 20px;
-        width: rem(134px);
+        justify-content: center;
+        gap: 10px;
+        width: rem(132.5px);
         height: rem(48px);
+        color: $main-bgColor;
+        font-size: rem(14px);
+        border-radius: 25px;
+        background-color: $m-btn-color;
 
+        &:hover {
+            transform: scale(105%);
+        }
     }
 }

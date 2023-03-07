@@ -18,7 +18,7 @@ function getPlaces() {
         },
         {
             _id: '102',
-            name: 'Orens Gay Cave',
+            name: 'Orens  Cave',
             imgUrls: ['https://res.cloudinary.com/dimirmc9j/image/upload/v1673877599/%D7%A7%D7%95%D7%A1%D7%98%D7%94_%D7%A8%D7%99%D7%A7%D7%94_%D7%9E%D7%A9%D7%A4%D7%97%D7%94_%D7%A8%D7%90%D7%A4%D7%98%D7%99%D7%A0%D7%92_ncmgot.jpg'],
             price: 840.00,
             loc: {
@@ -42,7 +42,7 @@ function getPlaces() {
         },
         {
             _id: '104',
-            name: 'Fuck oren',
+            name: 'Fuck Maor',
             imgUrls: ['https://res.cloudinary.com/dimirmc9j/image/upload/v1673817085/%D7%99%D7%9D_%D7%94%D7%9E%D7%9C%D7%97_%D7%A2%D7%9E%D7%99%D7%93%D7%AA_%D7%99%D7%93%D7%99%D7%99%D7%9D_qf2ku1.jpg'],
             price: 280.00,
             loc: {

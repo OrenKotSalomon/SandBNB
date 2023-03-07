@@ -10,9 +10,9 @@ function getPlaces() {
             imgUrls: ['https://res.cloudinary.com/dimirmc9j/image/upload/v1674317426/card6_nhuv58.jpg'],
             price: 180.00,
             loc: {
-                country: 'Gay Kingdom',
+                country: ' Kingdom',
                 countryCode: 'PIN',
-                city: 'Dick city',
+                city: ' city',
                 address: '69',
             },
         },
@@ -42,7 +42,7 @@ function getPlaces() {
         },
         {
             _id: '104',
-            name: 'Fuck Maor',
+            name: ' Maor',
             imgUrls: ['https://res.cloudinary.com/dimirmc9j/image/upload/v1673817085/%D7%99%D7%9D_%D7%94%D7%9E%D7%9C%D7%97_%D7%A2%D7%9E%D7%99%D7%93%D7%AA_%D7%99%D7%93%D7%99%D7%99%D7%9D_qf2ku1.jpg'],
             price: 280.00,
             loc: {

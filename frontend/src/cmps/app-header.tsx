@@ -21,7 +21,10 @@ export function AppHeader() {
                     <div className='add-guest-txt'>
                         Add guests
                     </div>
-                    <SearchIcon color='success' />
+                    <div className='search-icon-header'>
+
+                        <SearchIcon />
+                    </div>
                 </button>
             </div>
 

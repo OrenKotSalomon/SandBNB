@@ -1,5 +1,4 @@
 .place-filter {
-    height: 80px;
     border-bottom: 1px solid $border-color;
     padding: 0 24px;
     box-shadow: rgba(0, 0, 0, 0.098) 1px 1px 3px 0.5px;
@@ -24,6 +23,14 @@
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        color: rgb(132, 132, 132);
+        padding: 0.5rem;
+        cursor: pointer;
+        border-bottom: 3px solid $main-bgColor;
+        &:hover{
+            color: black;
+border-bottom: 3px solid lightgray;
+        }
     }
 
     .filter-icon {

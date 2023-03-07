@@ -1,5 +1,113 @@
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+
 export const placeService = {
-    getPlaces
+    getPlaces,
+    getFilters
+}
+
+function getFilters() {
+    return [
+        {
+            icon: RocketLaunchIcon,
+            txt:'OMG!'
+        },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+        // {
+        //     icon: ,
+        //     txt:
+        // },
+    ]
 }
 
 function getPlaces() {

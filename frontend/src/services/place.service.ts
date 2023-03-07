@@ -1,4 +1,4 @@
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+// import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 export const placeService = {
     getPlaces,
@@ -8,61 +8,61 @@ export const placeService = {
 function getFilters() {
     return [
         {
-            icon: RocketLaunchIcon,
+            icon: 'rocket_launch',
             txt:'OMG!'
         },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
-        // {
-        //     icon: ,
-        //     txt:
-        // },
+        {
+            icon: 'local_fire_department',
+            txt:'Trending'
+        },
+        {
+            icon:'fort',
+            txt:'Castles'
+        },
+        {
+            icon: 'kayaking',
+            txt:'Lake'
+        },
+        {
+            icon: 'camping',
+            txt:'Domes'
+        },
+        {
+            icon: 'bed',
+            txt:'Private rooms'
+        },
+        {
+            icon: 'castle',
+            txt:'Mentions'
+        },
+        {
+            icon: 'downhill_skiing',
+            txt:'Ski'
+        },
+        {
+            icon: 'location_city',
+            txt:'Apartment'
+        },
+        {
+            icon: 'family_restroom',
+            txt:'Family'
+        },
+        {
+            icon: 'local_cafe',
+            txt:'Bed & breakfast'
+        },
+        {
+            icon: 'holiday_village',
+            txt:'Village'
+        },
+        {
+            icon: 'cabin',
+            txt:'Cabin'
+        },
+        {
+            icon: 'gite',
+            txt:'Farm'
+        },
         // {
         //     icon: ,
         //     txt:

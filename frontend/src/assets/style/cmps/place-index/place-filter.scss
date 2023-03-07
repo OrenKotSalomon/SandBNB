@@ -1,15 +1,36 @@
-.place-filter{
+.place-filter {
     height: 80px;
     border-bottom: 1px solid $border-color;
     padding: 0 24px;
     box-shadow: rgba(0, 0, 0, 0.098) 1px 1px 3px 0.5px;
+
     @media (min-width: $narrow-breakpoint) {
         padding: 0 40px;
     }
+
     @media (min-width: $normal-breakpoint) {
         padding: 0 80px;
     }
+
     position: sticky;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
     top: 80px;
     background-color: $main-bgColor;
+
+    .filter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .filter-icon {
+        font-size: 1.8rem;
+    }
+
+    .filter-txt {
+        font-size: 0.8rem;
+    }
 }

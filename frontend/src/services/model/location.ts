@@ -1,6 +1,6 @@
 import { User } from "./user"
 
-export interface location {
+export interface Location {
     _id: string,
     name: string,
     type: string,

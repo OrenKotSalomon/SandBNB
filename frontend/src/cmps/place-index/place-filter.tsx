@@ -40,7 +40,9 @@ export function PlaceFilter() {
         }
     };
 
+    function leftArrow() {
 
+    }
 
     return (
         <div className="place-filter">
@@ -48,14 +50,13 @@ export function PlaceFilter() {
                 containerClass="carousel-container"
                 autoPlay={false}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
-
-                customRightArrow={<button className="arrow-right" onClick={temp}>
+                customRightArrow={<div className="arrow-right-container"><button className="arrow-right">
                     <FontAwesomeIcon icon={faChevronRight} />
-                </button>}
+                </button></div>}
 
-                customLeftArrow={<button className="arrow-left">
+                customLeftArrow={<div className="arrow-left-container"><button className="arrow-left">
                     <FontAwesomeIcon icon={faChevronLeft} />
-                </button>}
+                </button></div>}
             >
                 {filters.map((filter, idx) => {
                     return <div className="filter-container" key={idx}>

@@ -68,12 +68,13 @@
         color: black;
     }
 
-    .arrow-left {
+    .arrow-left,
+    .arrow-right {
         position: absolute;
         z-index: 1;
         background-color: white;
         border: 1px solid gray;
-        left: 0;
+        // left: 0;
         width: 1.7rem;
         height: 1.7rem;
         border-radius: 2rem;
@@ -83,19 +84,32 @@
             right: 8px;
         }
     }
+    .arrow-left {
+        left: 0;
+    }
     .arrow-right {
-        position: absolute;
-        z-index: 1;
-        background-color: white;
-        border: 1px solid gray;
         right: 0;
-        width: 1.7rem;
-        height: 1.7rem;
-        border-radius: 2rem;
-        svg{
-            position: absolute;
-            top: 6px;
-            right: 8px;
-        }
+    }
+ 
+
+    .arrow-right-container,
+    .arrow-left-container{
+        position: absolute;
+        height: 100px;
+        width: 80px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+   
+    .arrow-left-container {
+        left: 0;
+        background:linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 100%);
+
+    }
+    .arrow-right-container {
+        right: 0;
+        background:linear-gradient(160deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,1) 100%);
+
     }
 }

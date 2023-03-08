@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 // import { CustomRightArrow } from './filter-carousel'
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 // import Carousel from 'react-material-ui-carousel'
+import { ArrowProps } from 'react-multi-carousel/lib/types'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +14,7 @@ interface Ifilter {
     icon: string,
     txt: string
 }
+
 export function PlaceFilter() {
     const [filters, setFilters] = useState<Ifilter[]>(placeService.getFilters())
     const responsive = {
@@ -38,17 +40,9 @@ export function PlaceFilter() {
         }
     };
 
-    function ArrowFix(props: any) {
-        const {
-            onClick,
-            onMove,
-            carouselState: { currentSlide, deviceType }
-        } = props;
-        return (<button onClick={() => onClick()}>asdad</button>);
-    };
+    function temp() {
 
-
-
+    }
 
     return (
         <div className="place-filter">
@@ -58,9 +52,13 @@ export function PlaceFilter() {
                 removeArrowOnDeviceType={["tablet", "mobile"]}
                 rtl={false}
 
-                customRightArrow={<ArrowFix />}
+                customRightArrow={<button className="btn-check" onClick={temp}>
+                    <ArrowLeft />
+                </button>}
 
-                customLeftArrow={<ArrowFix />}
+                customLeftArrow={<button className="btn-check" onClick={temp}>
+                    <ArrowRight />
+                </button>}
             >
                 {filters.map((filter, idx) => {
                     return <div className="filter-container" key={idx}>
@@ -83,10 +81,7 @@ export function PlaceFilter() {
 
     {/* <div className="filters-container"> */ }
 
-
     {/* </div> */ }
-
-
 
     // )
 }

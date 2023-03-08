@@ -2,6 +2,7 @@
     border-bottom: 1px solid $border-color;
     padding: 0 24px;
     box-shadow: rgba(0, 0, 0, 0.098) 1px 1px 3px 0.5px;
+
     @media (min-width: $narrow-breakpoint) {
         padding: 0 40px;
     }
@@ -9,24 +10,28 @@
     @media (min-width: $normal-breakpoint) {
         padding: 0 80px;
     }
+
     position: sticky;
     background-color: $main-bgColor;
     display: flex;
     top: 80px;
 
-    .carousel-container{
+    .carousel-container {
         width: 92%;
     }
+
     .filters-container {
         display: flex;
         gap: 3rem;
         align-items: center;
         overflow-x: auto;
+
         &::-webkit-scrollbar {
             display: none;
         }
-        
+
     }
+
     .filter-container {
         display: flex;
         flex-direction: column;
@@ -42,7 +47,7 @@
             border-bottom: 2px solid lightgray;
         }
     }
-    
+
     .filter-icon {
         font-size: 1.8rem;
     }
@@ -52,7 +57,7 @@
         width: max-content;
     }
 
-    .filter-btn{
+    .filter-btn {
         display: flex;
         align-self: center;
         background-color: inherit;
@@ -61,5 +66,36 @@
         padding: 0.9rem 1.3rem;
         margin-left: 20px;
         color: black;
+    }
+
+    .arrow-left {
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        border: 1px solid gray;
+        left: 0;
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 2rem;
+        svg{
+            position: absolute;
+            top: 6px;
+            right: 8px;
+        }
+    }
+    .arrow-right {
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        border: 1px solid gray;
+        right: 0;
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 2rem;
+        svg{
+            position: absolute;
+            top: 6px;
+            right: 8px;
+        }
     }
 }

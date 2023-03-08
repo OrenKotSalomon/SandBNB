@@ -1161,6 +1161,237 @@ const locations = [
         }
         ],
         likedByUsers: ['u501', 'u502', 'u503'] // for user-wishlist : use $in
-    },
+    },{
+        _id: '10006548',
+        name: 'Cozy Mountain Cabin',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/3fd3da64-4507-4d92-8c02-85b0de64612c.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/4e4d4b2d-4ee7-4015-bd8d-55a2eb76710c.jpg?aki_policy=large'],
+        price: 150.00,
+        summary: 'Escape to the mountains and stay in this charming 2-bedroom cabin, nestled in the heart of the Rocky Mountains.',
+        capacity: 4,
+        amenities: [
+        'Fireplace',
+        'Outdoor grill',
+        'Hiking trails',
+        'Wifi',
+        'Pet-friendly'
+        ],
+        labels: [
+        'Mountain retreat',
+        'Nature',
+        'Romantic',
+        'Pet-friendly'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'Jack Thompson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Aspen',
+        address: '456 Mountain View Road',
+        lat: 39.1911,
+        lng: -106.8175
+        },
+        reviews: [
+        {
+        id: 'revId3',
+        txt: 'This cabin was the perfect getaway for my wife and I. The location was beautiful and the cabin itself was cozy and comfortable.',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Mark Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/87.jpg'
+        }
+        },
+        {
+        id: 'revId4',
+        txt: 'The only thing that could have been better was if the cabin had a hot tub, but overall we had a great time.',
+        rate: 4,
+        by: {
+        _id: 'u403',
+        fullname: 'Emily Wilson',
+        imgUrl: 'https://randomuser.me/api/portraits/women/80.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u501', 'u502'] // for user-wishlist : use $in
+    },{
+        _id: '10006548',
+        name: 'Cozy Mountain Cabin',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/4d8e84f4-1e43-4e13-8c8f-7ed1b5f64ea7.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/8369e7c5-559e-4147-a19f-8dbb14af2f2c.jpg?aki_policy=large'],
+        price: 120.00,
+        summary: 'Escape to this charming cabin nestled in the mountains, surrounded by stunning views and peaceful serenity.',
+        capacity: 4,
+        amenities: [
+        'Wood-burning fireplace',
+        'Fully equipped kitchen',
+        'Outdoor grill',
+        'Hiking trails',
+        'Board games',
+        'Wifi'
+        ],
+        labels: [
+        'Secluded',
+        'Nature',
+        'Romantic',
+        'Hiking'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'David Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Asheville',
+        address: '456 Mountain View Road',
+        lat: 35.5849,
+        lng: -82.5540
+        },
+        reviews: [
+        {
+        id: 'revId1',
+        txt: 'My husband and I had a wonderful stay at the cabin. The views were breathtaking and the cabin was cozy and comfortable. We cant wait to come back!',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Emily Jones',
+        imgUrl: 'https://randomuser.me/api/portraits/women/85.jpg'
+        }
+        },
+        {
+        id: 'revId2',
+        txt: 'The only downside was that the road to get to the cabin was a bit steep and bumpy, but it was worth it for the beautiful views and peaceful setting.',
+        rate: 4,
+        by: {
+        _id: 'u403',
+        fullname: 'Mark Davis',
+        imgUrl: 'https://randomuser.me/api/portraits/men/22.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u501', 'u502', 'u503'] // for user-wishlist : use $in
+    },{
+        _id: '10006548',
+        name: 'Cozy Mountain Cabin',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/06b19bcf-4a4c-4dc7-bc17-0b94d79bb1b9.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/e17c711a-8b0d-42af-9d9c-5390808a33a3.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/9e2b406d-7dc8-4b31-84a7-77a354c889d8.jpg?aki_policy=large'],
+        price: 120.00,
+        summary: 'Escape to the mountains and unwind in this charming cabin, nestled in the heart of the beautiful Smoky Mountains.',
+        capacity: 4,
+        amenities: [
+        'Wood-burning fireplace',
+        'Outdoor hot tub',
+        'Fully-equipped kitchen',
+        'Hiking trails nearby',
+        'Pet-friendly',
+        'Board games'
+        ],
+        labels: [
+        'Secluded',
+        'Romantic',
+        'Nature',
+        'Pet-friendly'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'David Williams',
+        imgUrl: 'https://randomuser.me/api/portraits/men/74.jpg',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Gatlinburg',
+        address: '456 Mountain View Drive',
+        lat: 35.687,
+        lng: -83.533
+        },
+        reviews: [
+        {
+        id: 'revId3',
+        txt: 'We loved our stay at this cozy cabin! It was the perfect getaway from the hustle and bustle of the city. The hot tub was a wonderful addition and we enjoyed sitting by the fireplace in the evenings.',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Emily Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/women/62.jpg'
+        }
+        },
+        {
+        id: 'revId4',
+        txt: 'The cabin was nice and clean, but the bed was a bit uncomfortable. Overall, it was a great stay and we would definitely recommend it to others.',
+        rate: 4,
+        by: {
+        _id: 'u403',
+        fullname: 'Michael Davis',
+        imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u501', 'u502'] // for user-wishlist : use $in
+    },{
+        _id: '10006548',
+        name: 'Cozy Mountain Cabin',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/84e6c279-53aa-44e3-9a33-cf9c9cbca8ec.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/6d2ee6f9-68e8-49c5-95d5-6ceca49a8a1c.jpg?aki_policy=large'],
+        price: 120.00,
+        summary: 'Escape to the mountains and relax in this cozy cabin nestled in the heart of the forest. Perfect for couples or small families looking for a peaceful getaway.',
+        capacity: 4,
+        amenities: [
+        'Wood-burning fireplace',
+        'Hiking trails',
+        'Fully equipped kitchen',
+        'Pet-friendly',
+        'Outdoor fire pit',
+        'Board games'
+        ],
+        labels: [
+        'Romantic',
+        'Secluded',
+        'Nature',
+        'Pet-friendly'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'John Brown',
+        imgUrl: 'https://randomuser.me/api/portraits/men/18.jpg',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Asheville',
+        address: '456 Forest Lane',
+        lat: 35.5738,
+        lng: -82.5420
+        },
+        reviews: [
+        {
+        id: 'revId3',
+        txt: 'We loved our stay at the cabin! It was so peaceful and quiet, and the forest setting was absolutely beautiful. The cabin was clean and cozy, and the wood-burning fireplace was the perfect touch for chilly nights.',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Sarah Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/women/22.jpg'
+        }
+        },
+        {
+        id: 'revId4',
+        txt: 'The only downside was that the driveway was a bit steep and narrow, so it was a bit challenging to navigate in our SUV. But overall, it was a wonderful stay and we would definitely come back!',
+        rate: 4,
+        by: {
+        _id: 'u403',
+        fullname: 'David Lee',
+        imgUrl: 'https://randomuser.me/api/portraits/men/5.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u201', 'u202'] // for user-wishlist : use $in
+    }
 
 ]

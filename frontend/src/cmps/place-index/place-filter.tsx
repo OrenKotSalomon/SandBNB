@@ -52,12 +52,12 @@ export function PlaceFilter() {
                 removeArrowOnDeviceType={["tablet", "mobile"]}
                 rtl={false}
 
-                customRightArrow={<button className="btn-check" onClick={temp}>
-                    <ArrowLeft />
+                customRightArrow={<button className="arrow-right" onClick={temp}>
+                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>}
 
-                customLeftArrow={<button className="btn-check" onClick={temp}>
-                    <ArrowRight />
+                customLeftArrow={<button className="arrow-left" onClick={temp}>
+                    <FontAwesomeIcon icon={faChevronLeft} />
                 </button>}
             >
                 {filters.map((filter, idx) => {

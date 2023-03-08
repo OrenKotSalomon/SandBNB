@@ -1,9 +1,13 @@
 import { placeService } from "../../services/place.service"
 import { useEffect, useState } from "react"
-import { FilterCarousel } from './filter-carousel'
+// import { CustomRightArrow } from './filter-carousel'
+import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 // import Carousel from 'react-material-ui-carousel'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface Ifilter {
     icon: string,
@@ -34,20 +38,42 @@ export function PlaceFilter() {
         }
     };
 
+    function ArrowFix(props: any) {
+        const {
+            onClick,
+            onMove,
+            carouselState: { currentSlide, deviceType }
+        } = props;
+        return (<button onClick={() => onClick()}>asdad</button>);
+    };
+
+
+
+
     return (
         <div className="place-filter">
             <Carousel responsive={responsive}
                 containerClass="carousel-container"
                 autoPlay={false}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
+                rtl={false}
+
+                customRightArrow={<ArrowFix />}
+
+                customLeftArrow={<ArrowFix />}
             >
                 {filters.map((filter, idx) => {
-                    return <div key={idx} className="filter-container">
+                    return <div className="filter-container" key={idx}>
                         <span className="material-symbols-outlined filter-icon">{filter.icon}</span>
                         <p className="filter-txt">{filter.txt}</p>
                     </div>
                 })}
             </Carousel>
+            {/* <FontAwesomeIcon
+                      icon={faChevronLeft as IconProp}
+                      size="lg"
+                      className="absolute top-1/2 left-4 max-w-4 cursor-pointer text-primary-400"
+                    /> */}
             <button className="filter-btn">
                 <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', height: '14px', width: '14px', fill: 'currentcolor' }}><path d="M5 8c1.306 0 2.418.835 2.83 2H14v2H7.829A3.001 3.001 0 1 1 5 8zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6-8a3 3 0 1 1-2.829 4H2V4h6.17A3.001 3.001 0 0 1 11 2zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path></svg>
                 filters
@@ -57,7 +83,10 @@ export function PlaceFilter() {
 
     {/* <div className="filters-container"> */ }
 
+
     {/* </div> */ }
+
+
 
     // )
 }

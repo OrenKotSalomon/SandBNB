@@ -27,6 +27,7 @@ export function MapPricing() {
         >
 
             <AnyReactComponent
+
                 lat={59.955413}
                 lng={30.337844}
                 text="123$"

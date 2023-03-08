@@ -18,11 +18,15 @@
     position: sticky;
     background-color: $main-bgColor;
     display: flex;
+    top: 80px;
+
+    .carousel-container{
+        width: 92%;
+    }
     .filters-container {
         display: flex;
         gap: 3rem;
         align-items: center;
-        top: 80px;
         overflow-x: auto;
         &::-webkit-scrollbar {
             display: none;
@@ -37,11 +41,11 @@
         color: rgb(132, 132, 132);
         padding: 1rem 0;
         cursor: pointer;
-        border-bottom: 3px solid $main-bgColor;
+        border-bottom: 2px solid $main-bgColor;
 
         &:hover {
             color: black;
-            border-bottom: 3px solid lightgray;
+            border-bottom: 2px solid lightgray;
         }
     }
     
@@ -52,5 +56,16 @@
     .filter-txt {
         font-size: 0.8rem;
         width: max-content;
+    }
+
+    .filter-btn{
+        display: flex;
+        align-self: center;
+        background-color: inherit;
+        border: 1px solid lightgray;
+        border-radius: 12px;
+        padding: 0.9rem 1.3rem;
+        margin-left: 20px;
+        color: black;
     }
 }

@@ -463,9 +463,9 @@ const locations = [
             country: 'United States',
             countryCode: 'US',
             city: 'New York',
-            address: '123 Example Street',
-            lat: 40.712776,
-            lng: -74.005974
+            address: 'Upper east side',
+            lat: 40.77558209555206,
+            lng: -73.96078602805778
         },
         reviews: [
             {
@@ -490,7 +490,7 @@ const locations = [
             }
         ],
         likedByUsers: ['333333333', '444444444'] // array of user IDs who have liked this property
-    }, {
+    },{
         _id: '10006546',
         name: 'Ribeira Charming Duplex',
         type: 'House',
@@ -538,7 +538,7 @@ const locations = [
             }
         ],
         likedByUsers: ['mini-user'] // for user-wishlist : use $in
-    }, {
+    },{
         _id: '10009876',
         name: 'Cozy Cabin in the Woods',
         type: 'Cabin',
@@ -595,7 +595,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u107', 'u108', 'u109'] // for user-wishlist : use $in
-    }, {
+    },{
         _id: '100987',
         name: 'Modern Loft in Downtown LA',
         type: 'Apartment',
@@ -651,8 +651,7 @@ const locations = [
             }
         ],
         likedByUsers: ['user123', 'user456'] // for user-wishlist : use $in
-    },
-    {
+    },{
         _id: '10002345',
         name: 'Sunny Beach House',
         type: 'House',
@@ -714,7 +713,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u101', 'u203', 'u301'] // for user-wishlist : use $in
-    }, {
+    },{
         _id: '10006894',
         name: 'Stylish Apartment in the Heart of Paris',
         type: 'Apartment',
@@ -772,7 +771,7 @@ const locations = [
             }
         ],
         likedByUsers: ['mini-user'] // for user-wishlist : use $in
-    }, {
+    },{
         _id: '10003927',
         name: 'Sunny Apartment in Madrid',
         type: 'Apartment',
@@ -830,7 +829,7 @@ const locations = [
             }
         ],
         likedByUsers: ['mini-user', 'u104'] // for user-wishlist : use $in
-    }, {
+    },{
         _id: '10002371',
         name: 'Gorgeous Villa with Private Pool',
         type: 'Villa',
@@ -891,7 +890,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u102', 'u205', 'u508']
-    }, {
+    },{
         _id: '100325',
         name: 'Luxury Villa with Ocean View',
         type: 'Villa',
@@ -948,7 +947,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u122', 'u321']
-    }, {
+    },{
         _id: '20001234',
         name: 'Sunny Beach House',
         type: 'House',
@@ -1010,6 +1009,179 @@ const locations = [
             }
         ],
         likedByUsers: ['u102', 'u105'] // for user-wishlist : use $in
-    }
+    },{
+        _id: '10006548',
+        name: 'Cozy Cabin in the Woods',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/8f1d1801-aa11-4437-9283-3e135af55824.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/1d2b76f8-2046-4729-9a1a-2d6d2e6f15c6.jpg?aki_policy=large'],
+        price: 120.00,
+        summary: 'Escape to this cozy cabin in the woods and enjoy a peaceful retreat surrounded by nature.',
+        capacity: 4,
+        amenities: [
+        'Fireplace',
+        'Kitchenette',
+        'BBQ grill',
+        'Board games',
+        'Hiking trails',
+        'No WiFi'
+        ],
+        labels: [
+        'Nature',
+        'Cozy',
+        'Secluded',
+        'Romantic'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'Mark Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/23.jpg',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Asheville',
+        address: '456 Forest Lane',
+        lat: 35.5935,
+        lng: -82.5540
+        },
+        reviews: [
+        {
+        id: 'revId3',
+        txt: 'We had a great time at the cabin! It was the perfect place to relax and unwind. Mark was a great host and provided everything we needed for a comfortable stay.',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Sara Smith',
+        imgUrl: 'https://randomuser.me/api/portraits/women/44.jpg'
+        }
+        },
+        {
+        id: 'revId4',
+        txt: 'The cabin was cute and cozy, but the lack of WiFi was a bit of a challenge for us since we needed to stay connected for work. Other than that, we had a great stay!',
+        rate: 4,
+        by: {
+        _id: 'u403',
+        fullname: 'Mike Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/78.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u502', 'u503'] // for user-wishlist : use $in
+    },{
+        _id: '10006548',
+        name: 'Cozy Cabin in the Woods',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/101367161/50ef1d50_original.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/101367173/9ce7f02a_original.jpg?aki_policy=large'],
+        price: 120.00,
+        summary: 'Escape to the peaceful wilderness in this charming cabin surrounded by towering trees and breathtaking views of the mountains.',
+        capacity: 4,
+        amenities: [
+        'Wood stove',
+        'Hiking trails',
+        'Outdoor grill',
+        'No WiFi',
+        'Pet friendly'
+        ],
+        labels: [
+        'Nature',
+        'Peaceful',
+        'Romantic',
+        'Off the grid'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'Jackie Lee',
+        imgUrl: 'https://a0.muscache.com/im/pictures/0b61f5b3-5c5d-4805-8d97-1e5ba5b2a300.jpg?aki_policy=profile_small',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Asheville',
+        address: '1234 Forest Lane',
+        lat: 35.6518,
+        lng: -82.5461
+        },
+        reviews: [
+        {
+        id: 'revId3',
+        txt: 'This cabin was exactly what we were looking for - cozy, secluded, and surrounded by beautiful nature. Jackie was a great host and made sure we had everything we needed.',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Chris Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/81.jpg'
+        }
+        },
+        {
+        id: 'revId4',
+        txt: 'The lack of WiFi was actually a nice break from the constant connectivity of daily life. We loved sitting by the wood stove and playing board games.',
+        rate: 4,
+        by: {
+        _id: 'u403',
+        fullname: 'Sarah Williams',
+        imgUrl: 'https://randomuser.me/api/portraits/women/67.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u501', 'u502'] // for user-wishlist : use $in
+    },{
+        _id: '10006548',
+        name: 'Cozy Cabin in the Woods',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/32f50cdd-91a3-49da-a08e-17c6a48d22a8.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/16e7852f-e94b-4e12-93ad-4a2d52aa4ce9.jpg?aki_policy=large'],
+        price: 120.00,
+        summary: 'Escape the hustle and bustle of city life and relax in this charming cabin nestled in the woods. Perfect for a romantic getaway or a family vacation.',
+        capacity: 4,
+        amenities: [
+        'Fireplace',
+        'Hot tub',
+        'Pet-friendly',
+        'Hiking trails',
+        'Kitchenette',
+        'Board games'
+        ],
+        labels: [
+        'Nature',
+        'Romantic',
+        'Pet-friendly',
+        'Cozy'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'Mark Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Big Bear Lake',
+        address: '456 Forest Rd',
+        lat: 34.2439,
+        lng: -116.9114
+        },
+        reviews: [
+        {
+        id: 'revId1',
+        txt: 'My partner and I had a lovely time staying at this cabin. It was cozy and romantic, and the hot tub was a nice touch. Would definitely recommend!',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Sarah Adams',
+        imgUrl: 'https://randomuser.me/api/portraits/women/45.jpg'
+        }
+        },
+        {
+        id: 'revId2',
+        txt: 'The cabin was cute and had everything we needed, but the bed was a bit uncomfortable. Other than that, we enjoyed our stay.',
+        rate: 3,
+        by: {
+        _id: 'u403',
+        fullname: 'Mike Wilson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u501', 'u502', 'u503'] // for user-wishlist : use $in
+    },
 
 ]

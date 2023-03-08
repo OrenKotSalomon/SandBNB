@@ -8,7 +8,7 @@ import { placeService } from './services/place.service'
 
 function App() {
   const [count, setCount] = useState<number>(0)
-  placeService.saveLocation()
+
   return (
     <div className="app">
       <AppHeader />

@@ -1,20 +1,22 @@
 import { placeService } from "../../services/place.service"
 import { useEffect, useState } from "react"
-// import { CustomRightArrow } from './filter-carousel'
-import { ArrowLeft, ArrowRight } from "@mui/icons-material";
-// import Carousel from 'react-material-ui-carousel'
+
 import { ArrowProps } from 'react-multi-carousel/lib/types'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface Ifilter {
     icon: string,
     txt: string
 }
+interface CustomLeftArrowProps extends ArrowProps {
 
+}
+interface CustomRightArrowProps extends ArrowProps {
+
+}
 export function PlaceFilter() {
     const [filters, setFilters] = useState<Ifilter[]>(placeService.getFilters())
     const responsive = {
@@ -40,18 +42,15 @@ export function PlaceFilter() {
         }
     };
 
-    function leftArrow() {
-
-    }
-    function TempLeft() {
-        return <button className="arrow-left" onClick={temp}>
+    function ArrowLeft({ onClick }: CustomLeftArrowProps) {
+        return <div className="arrow-left-container" onClick={onClick}><button className="arrow-left">
             <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
+        </button></div>
     }
-    function TempRight() {
-        return <button className="arrow-right" onClick={temp}>
+    function ArrowRight({ onClick }: CustomLeftArrowProps) {
+        return <div className="arrow-right-container" onClick={onClick}><button className="arrow-right">
             <FontAwesomeIcon icon={faChevronRight} />
-        </button>
+        </button></div>
     }
 
     return (
@@ -60,13 +59,9 @@ export function PlaceFilter() {
                 containerClass="carousel-container"
                 autoPlay={false}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
-                customRightArrow={<div className="arrow-right-container"><button className="arrow-right">
-                    <FontAwesomeIcon icon={faChevronRight} />
-                </button></div>}
+                customRightArrow={<ArrowRight />}
 
-                customLeftArrow={<div className="arrow-left-container"><button className="arrow-left">
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                </button></div>}
+                customLeftArrow={<ArrowLeft />}
             >
                 {filters.map((filter, idx) => {
                     return <div className="filter-container" key={idx}>

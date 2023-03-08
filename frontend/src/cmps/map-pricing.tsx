@@ -1,5 +1,6 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
+import { DynamicBtn } from "./dynamic-btn-nav/dynamic-btn";
 
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 interface IMapState {
@@ -19,31 +20,35 @@ export function MapPricing() {
     };
 
     // Important! Always set the container height explicitly
-    return <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyA8SqR_MWlmUlCNuXIdfpWY3LqRg4LHvjQ' }}
-            defaultCenter={defaultProps.center}
-            defaultZoom={defaultProps.zoom}
-        >
+    return <>
+        <DynamicBtn txt='map' />
 
-            <AnyReactComponent
+        <div style={{ height: '95vh', width: '100%' }}>
+            <GoogleMapReact
+                bootstrapURLKeys={{ key: 'AIzaSyA8SqR_MWlmUlCNuXIdfpWY3LqRg4LHvjQ' }}
+                defaultCenter={defaultProps.center}
+                defaultZoom={defaultProps.zoom}
+            >
 
-                lat={59.955413}
-                lng={30.337844}
-                text="123$"
-            />
-            <AnyReactComponent
-                lat={54.955413}
-                lng={30.337844}
-                text="1123$"
-            />
-            <AnyReactComponent
-                lat={57.955413}
-                lng={30.337844}
-                text="1223$"
-            />
+                <AnyReactComponent
 
-        </GoogleMapReact>
-    </div>
+                    lat={59.955413}
+                    lng={30.337844}
+                    text="123$"
+                />
+                <AnyReactComponent
+                    lat={54.955413}
+                    lng={30.337844}
+                    text="1123$"
+                />
+                <AnyReactComponent
+                    lat={57.955413}
+                    lng={30.337844}
+                    text="1223$"
+                />
 
+            </GoogleMapReact>
+        </div>
+
+    </>
 }

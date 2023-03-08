@@ -7,7 +7,7 @@ export function AppFooter() {
 
     return <>
         <div className='map-btn-container'>
-
+            {/* need to create button component */}
             <button onClick={() => navigate('/map')} className='show-map-btn'>
                 <span>Show map</span>
                 <MapIcon />

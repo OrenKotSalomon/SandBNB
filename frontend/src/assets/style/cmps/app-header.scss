@@ -8,6 +8,7 @@
     position: sticky;
     top: 0;
     background-color: $main-bgColor;
+    z-index: 5;
 
     .logo-container {
         display: flex;

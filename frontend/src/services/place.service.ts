@@ -1,6 +1,7 @@
 // import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 import { storageService } from "./async-storage.service"
+import { Location } from "./model/location"
 import { utilService } from "./util.service"
 
 export const placeService = {
@@ -9,17 +10,36 @@ export const placeService = {
     saveLocation,
     getById,
     query,
+    save,
+    remove,
 }
 
 const LOCATION_DB = 'location'
 
-function query(filterBy: object) {
-    return storageService.query(LOCATION_DB)
+async function query(filterBy: object) {
+    return await storageService.query(LOCATION_DB)
 }
 
-function getById(locationId: string) {
-    return storageService.get(LOCATION_DB, locationId)
+async function getById(locationId: string) {
+    return await storageService.get(LOCATION_DB, locationId)
     // return httpService.get(`board/${boardId}`)
+}
+
+async function save(location: Location) {
+
+    try {
+        if (location._id) {
+            return storageService.put(LOCATION_DB + location._id, location)
+
+        } else {
+            // location.owner = userService.getLoggedinUser()
+            return storageService.post('location', location)
+        }
+    } catch (error) {
+        console.log('cannot save/create location', error);
+
+    }
+
 }
 
 // for dev use only
@@ -376,6 +396,14 @@ function getPlaces() {
         }
     ]
 }
+
+async function remove(locationId: string) {
+    // throw new Error('Nope')
+    await storageService.remove(LOCATION_DB, locationId)
+    // return httpService.delete(`board/${boardId}`)
+
+}
+
 // DEMO PLACE JSON
 
 const location = {
@@ -490,7 +518,7 @@ const locations = [
             }
         ],
         likedByUsers: ['333333333', '444444444'] // array of user IDs who have liked this property
-    },{
+    }, {
         _id: '10006546',
         name: 'Ribeira Charming Duplex',
         type: 'House',
@@ -538,7 +566,7 @@ const locations = [
             }
         ],
         likedByUsers: ['mini-user'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10009876',
         name: 'Cozy Cabin in the Woods',
         type: 'Cabin',
@@ -595,7 +623,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u107', 'u108', 'u109'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '100987',
         name: 'Modern Loft in Downtown LA',
         type: 'Apartment',
@@ -651,7 +679,7 @@ const locations = [
             }
         ],
         likedByUsers: ['user123', 'user456'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10002345',
         name: 'Sunny Beach House',
         type: 'House',
@@ -713,7 +741,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u101', 'u203', 'u301'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006894',
         name: 'Stylish Apartment in the Heart of Paris',
         type: 'Apartment',
@@ -771,7 +799,7 @@ const locations = [
             }
         ],
         likedByUsers: ['mini-user'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10003927',
         name: 'Sunny Apartment in Madrid',
         type: 'Apartment',
@@ -829,7 +857,7 @@ const locations = [
             }
         ],
         likedByUsers: ['mini-user', 'u104'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10002371',
         name: 'Gorgeous Villa with Private Pool',
         type: 'Villa',
@@ -890,7 +918,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u102', 'u205', 'u508']
-    },{
+    }, {
         _id: '100325',
         name: 'Luxury Villa with Ocean View',
         type: 'Villa',
@@ -947,7 +975,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u122', 'u321']
-    },{
+    }, {
         _id: '20001234',
         name: 'Sunny Beach House',
         type: 'House',
@@ -1009,7 +1037,7 @@ const locations = [
             }
         ],
         likedByUsers: ['u102', 'u105'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006548',
         name: 'Cozy Cabin in the Woods',
         type: 'Cabin',
@@ -1018,56 +1046,56 @@ const locations = [
         summary: 'Escape to this cozy cabin in the woods and enjoy a peaceful retreat surrounded by nature.',
         capacity: 4,
         amenities: [
-        'Fireplace',
-        'Kitchenette',
-        'BBQ grill',
-        'Board games',
-        'Hiking trails',
-        'No WiFi'
+            'Fireplace',
+            'Kitchenette',
+            'BBQ grill',
+            'Board games',
+            'Hiking trails',
+            'No WiFi'
         ],
         labels: [
-        'Nature',
-        'Cozy',
-        'Secluded',
-        'Romantic'
+            'Nature',
+            'Cozy',
+            'Secluded',
+            'Romantic'
         ],
         host: {
-        _id: 'u401',
-        fullname: 'Mark Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/23.jpg',
+            _id: 'u401',
+            fullname: 'Mark Johnson',
+            imgUrl: 'https://randomuser.me/api/portraits/men/23.jpg',
         },
         loc: {
-        country: 'United States',
-        countryCode: 'US',
-        city: 'Asheville',
-        address: '456 Forest Lane',
-        lat: 35.5935,
-        lng: -82.5540
+            country: 'United States',
+            countryCode: 'US',
+            city: 'Asheville',
+            address: '456 Forest Lane',
+            lat: 35.5935,
+            lng: -82.5540
         },
         reviews: [
-        {
-        id: 'revId3',
-        txt: 'We had a great time at the cabin! It was the perfect place to relax and unwind. Mark was a great host and provided everything we needed for a comfortable stay.',
-        rate: 5,
-        by: {
-        _id: 'u402',
-        fullname: 'Sara Smith',
-        imgUrl: 'https://randomuser.me/api/portraits/women/44.jpg'
-        }
-        },
-        {
-        id: 'revId4',
-        txt: 'The cabin was cute and cozy, but the lack of WiFi was a bit of a challenge for us since we needed to stay connected for work. Other than that, we had a great stay!',
-        rate: 4,
-        by: {
-        _id: 'u403',
-        fullname: 'Mike Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/78.jpg'
-        }
-        }
+            {
+                id: 'revId3',
+                txt: 'We had a great time at the cabin! It was the perfect place to relax and unwind. Mark was a great host and provided everything we needed for a comfortable stay.',
+                rate: 5,
+                by: {
+                    _id: 'u402',
+                    fullname: 'Sara Smith',
+                    imgUrl: 'https://randomuser.me/api/portraits/women/44.jpg'
+                }
+            },
+            {
+                id: 'revId4',
+                txt: 'The cabin was cute and cozy, but the lack of WiFi was a bit of a challenge for us since we needed to stay connected for work. Other than that, we had a great stay!',
+                rate: 4,
+                by: {
+                    _id: 'u403',
+                    fullname: 'Mike Johnson',
+                    imgUrl: 'https://randomuser.me/api/portraits/men/78.jpg'
+                }
+            }
         ],
         likedByUsers: ['u502', 'u503'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006548',
         name: 'Cozy Cabin in the Woods',
         type: 'Cabin',
@@ -1076,55 +1104,55 @@ const locations = [
         summary: 'Escape to the peaceful wilderness in this charming cabin surrounded by towering trees and breathtaking views of the mountains.',
         capacity: 4,
         amenities: [
-        'Wood stove',
-        'Hiking trails',
-        'Outdoor grill',
-        'No WiFi',
-        'Pet friendly'
+            'Wood stove',
+            'Hiking trails',
+            'Outdoor grill',
+            'No WiFi',
+            'Pet friendly'
         ],
         labels: [
-        'Nature',
-        'Peaceful',
-        'Romantic',
-        'Off the grid'
+            'Nature',
+            'Peaceful',
+            'Romantic',
+            'Off the grid'
         ],
         host: {
-        _id: 'u401',
-        fullname: 'Jackie Lee',
-        imgUrl: 'https://a0.muscache.com/im/pictures/0b61f5b3-5c5d-4805-8d97-1e5ba5b2a300.jpg?aki_policy=profile_small',
+            _id: 'u401',
+            fullname: 'Jackie Lee',
+            imgUrl: 'https://a0.muscache.com/im/pictures/0b61f5b3-5c5d-4805-8d97-1e5ba5b2a300.jpg?aki_policy=profile_small',
         },
         loc: {
-        country: 'United States',
-        countryCode: 'US',
-        city: 'Asheville',
-        address: '1234 Forest Lane',
-        lat: 35.6518,
-        lng: -82.5461
+            country: 'United States',
+            countryCode: 'US',
+            city: 'Asheville',
+            address: '1234 Forest Lane',
+            lat: 35.6518,
+            lng: -82.5461
         },
         reviews: [
-        {
-        id: 'revId3',
-        txt: 'This cabin was exactly what we were looking for - cozy, secluded, and surrounded by beautiful nature. Jackie was a great host and made sure we had everything we needed.',
-        rate: 5,
-        by: {
-        _id: 'u402',
-        fullname: 'Chris Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/81.jpg'
-        }
-        },
-        {
-        id: 'revId4',
-        txt: 'The lack of WiFi was actually a nice break from the constant connectivity of daily life. We loved sitting by the wood stove and playing board games.',
-        rate: 4,
-        by: {
-        _id: 'u403',
-        fullname: 'Sarah Williams',
-        imgUrl: 'https://randomuser.me/api/portraits/women/67.jpg'
-        }
-        }
+            {
+                id: 'revId3',
+                txt: 'This cabin was exactly what we were looking for - cozy, secluded, and surrounded by beautiful nature. Jackie was a great host and made sure we had everything we needed.',
+                rate: 5,
+                by: {
+                    _id: 'u402',
+                    fullname: 'Chris Johnson',
+                    imgUrl: 'https://randomuser.me/api/portraits/men/81.jpg'
+                }
+            },
+            {
+                id: 'revId4',
+                txt: 'The lack of WiFi was actually a nice break from the constant connectivity of daily life. We loved sitting by the wood stove and playing board games.',
+                rate: 4,
+                by: {
+                    _id: 'u403',
+                    fullname: 'Sarah Williams',
+                    imgUrl: 'https://randomuser.me/api/portraits/women/67.jpg'
+                }
+            }
         ],
         likedByUsers: ['u501', 'u502'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006548',
         name: 'Cozy Cabin in the Woods',
         type: 'Cabin',
@@ -1133,56 +1161,56 @@ const locations = [
         summary: 'Escape the hustle and bustle of city life and relax in this charming cabin nestled in the woods. Perfect for a romantic getaway or a family vacation.',
         capacity: 4,
         amenities: [
-        'Fireplace',
-        'Hot tub',
-        'Pet-friendly',
-        'Hiking trails',
-        'Kitchenette',
-        'Board games'
+            'Fireplace',
+            'Hot tub',
+            'Pet-friendly',
+            'Hiking trails',
+            'Kitchenette',
+            'Board games'
         ],
         labels: [
-        'Nature',
-        'Romantic',
-        'Pet-friendly',
-        'Cozy'
+            'Nature',
+            'Romantic',
+            'Pet-friendly',
+            'Cozy'
         ],
         host: {
-        _id: 'u401',
-        fullname: 'Mark Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+            _id: 'u401',
+            fullname: 'Mark Johnson',
+            imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
         },
         loc: {
-        country: 'United States',
-        countryCode: 'US',
-        city: 'Big Bear Lake',
-        address: '456 Forest Rd',
-        lat: 34.2439,
-        lng: -116.9114
+            country: 'United States',
+            countryCode: 'US',
+            city: 'Big Bear Lake',
+            address: '456 Forest Rd',
+            lat: 34.2439,
+            lng: -116.9114
         },
         reviews: [
-        {
-        id: 'revId1',
-        txt: 'My partner and I had a lovely time staying at this cabin. It was cozy and romantic, and the hot tub was a nice touch. Would definitely recommend!',
-        rate: 5,
-        by: {
-        _id: 'u402',
-        fullname: 'Sarah Adams',
-        imgUrl: 'https://randomuser.me/api/portraits/women/45.jpg'
-        }
-        },
-        {
-        id: 'revId2',
-        txt: 'The cabin was cute and had everything we needed, but the bed was a bit uncomfortable. Other than that, we enjoyed our stay.',
-        rate: 3,
-        by: {
-        _id: 'u403',
-        fullname: 'Mike Wilson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg'
-        }
-        }
+            {
+                id: 'revId1',
+                txt: 'My partner and I had a lovely time staying at this cabin. It was cozy and romantic, and the hot tub was a nice touch. Would definitely recommend!',
+                rate: 5,
+                by: {
+                    _id: 'u402',
+                    fullname: 'Sarah Adams',
+                    imgUrl: 'https://randomuser.me/api/portraits/women/45.jpg'
+                }
+            },
+            {
+                id: 'revId2',
+                txt: 'The cabin was cute and had everything we needed, but the bed was a bit uncomfortable. Other than that, we enjoyed our stay.',
+                rate: 3,
+                by: {
+                    _id: 'u403',
+                    fullname: 'Mike Wilson',
+                    imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg'
+                }
+            }
         ],
         likedByUsers: ['u501', 'u502', 'u503'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006548',
         name: 'Cozy Mountain Cabin',
         type: 'Cabin',
@@ -1191,55 +1219,55 @@ const locations = [
         summary: 'Escape to the mountains and stay in this charming 2-bedroom cabin, nestled in the heart of the Rocky Mountains.',
         capacity: 4,
         amenities: [
-        'Fireplace',
-        'Outdoor grill',
-        'Hiking trails',
-        'Wifi',
-        'Pet-friendly'
+            'Fireplace',
+            'Outdoor grill',
+            'Hiking trails',
+            'Wifi',
+            'Pet-friendly'
         ],
         labels: [
-        'Mountain retreat',
-        'Nature',
-        'Romantic',
-        'Pet-friendly'
+            'Mountain retreat',
+            'Nature',
+            'Romantic',
+            'Pet-friendly'
         ],
         host: {
-        _id: 'u401',
-        fullname: 'Jack Thompson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+            _id: 'u401',
+            fullname: 'Jack Thompson',
+            imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
         },
         loc: {
-        country: 'United States',
-        countryCode: 'US',
-        city: 'Aspen',
-        address: '456 Mountain View Road',
-        lat: 39.1911,
-        lng: -106.8175
+            country: 'United States',
+            countryCode: 'US',
+            city: 'Aspen',
+            address: '456 Mountain View Road',
+            lat: 39.1911,
+            lng: -106.8175
         },
         reviews: [
-        {
-        id: 'revId3',
-        txt: 'This cabin was the perfect getaway for my wife and I. The location was beautiful and the cabin itself was cozy and comfortable.',
-        rate: 5,
-        by: {
-        _id: 'u402',
-        fullname: 'Mark Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/87.jpg'
-        }
-        },
-        {
-        id: 'revId4',
-        txt: 'The only thing that could have been better was if the cabin had a hot tub, but overall we had a great time.',
-        rate: 4,
-        by: {
-        _id: 'u403',
-        fullname: 'Emily Wilson',
-        imgUrl: 'https://randomuser.me/api/portraits/women/80.jpg'
-        }
-        }
+            {
+                id: 'revId3',
+                txt: 'This cabin was the perfect getaway for my wife and I. The location was beautiful and the cabin itself was cozy and comfortable.',
+                rate: 5,
+                by: {
+                    _id: 'u402',
+                    fullname: 'Mark Johnson',
+                    imgUrl: 'https://randomuser.me/api/portraits/men/87.jpg'
+                }
+            },
+            {
+                id: 'revId4',
+                txt: 'The only thing that could have been better was if the cabin had a hot tub, but overall we had a great time.',
+                rate: 4,
+                by: {
+                    _id: 'u403',
+                    fullname: 'Emily Wilson',
+                    imgUrl: 'https://randomuser.me/api/portraits/women/80.jpg'
+                }
+            }
         ],
         likedByUsers: ['u501', 'u502'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006548',
         name: 'Cozy Mountain Cabin',
         type: 'Cabin',
@@ -1248,56 +1276,56 @@ const locations = [
         summary: 'Escape to this charming cabin nestled in the mountains, surrounded by stunning views and peaceful serenity.',
         capacity: 4,
         amenities: [
-        'Wood-burning fireplace',
-        'Fully equipped kitchen',
-        'Outdoor grill',
-        'Hiking trails',
-        'Board games',
-        'Wifi'
+            'Wood-burning fireplace',
+            'Fully equipped kitchen',
+            'Outdoor grill',
+            'Hiking trails',
+            'Board games',
+            'Wifi'
         ],
         labels: [
-        'Secluded',
-        'Nature',
-        'Romantic',
-        'Hiking'
+            'Secluded',
+            'Nature',
+            'Romantic',
+            'Hiking'
         ],
         host: {
-        _id: 'u401',
-        fullname: 'David Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+            _id: 'u401',
+            fullname: 'David Johnson',
+            imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
         },
         loc: {
-        country: 'United States',
-        countryCode: 'US',
-        city: 'Asheville',
-        address: '456 Mountain View Road',
-        lat: 35.5849,
-        lng: -82.5540
+            country: 'United States',
+            countryCode: 'US',
+            city: 'Asheville',
+            address: '456 Mountain View Road',
+            lat: 35.5849,
+            lng: -82.5540
         },
         reviews: [
-        {
-        id: 'revId1',
-        txt: 'My husband and I had a wonderful stay at the cabin. The views were breathtaking and the cabin was cozy and comfortable. We cant wait to come back!',
-        rate: 5,
-        by: {
-        _id: 'u402',
-        fullname: 'Emily Jones',
-        imgUrl: 'https://randomuser.me/api/portraits/women/85.jpg'
-        }
-        },
-        {
-        id: 'revId2',
-        txt: 'The only downside was that the road to get to the cabin was a bit steep and bumpy, but it was worth it for the beautiful views and peaceful setting.',
-        rate: 4,
-        by: {
-        _id: 'u403',
-        fullname: 'Mark Davis',
-        imgUrl: 'https://randomuser.me/api/portraits/men/22.jpg'
-        }
-        }
+            {
+                id: 'revId1',
+                txt: 'My husband and I had a wonderful stay at the cabin. The views were breathtaking and the cabin was cozy and comfortable. We cant wait to come back!',
+                rate: 5,
+                by: {
+                    _id: 'u402',
+                    fullname: 'Emily Jones',
+                    imgUrl: 'https://randomuser.me/api/portraits/women/85.jpg'
+                }
+            },
+            {
+                id: 'revId2',
+                txt: 'The only downside was that the road to get to the cabin was a bit steep and bumpy, but it was worth it for the beautiful views and peaceful setting.',
+                rate: 4,
+                by: {
+                    _id: 'u403',
+                    fullname: 'Mark Davis',
+                    imgUrl: 'https://randomuser.me/api/portraits/men/22.jpg'
+                }
+            }
         ],
         likedByUsers: ['u501', 'u502', 'u503'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006548',
         name: 'Cozy Mountain Cabin',
         type: 'Cabin',
@@ -1306,56 +1334,56 @@ const locations = [
         summary: 'Escape to the mountains and unwind in this charming cabin, nestled in the heart of the beautiful Smoky Mountains.',
         capacity: 4,
         amenities: [
-        'Wood-burning fireplace',
-        'Outdoor hot tub',
-        'Fully-equipped kitchen',
-        'Hiking trails nearby',
-        'Pet-friendly',
-        'Board games'
+            'Wood-burning fireplace',
+            'Outdoor hot tub',
+            'Fully-equipped kitchen',
+            'Hiking trails nearby',
+            'Pet-friendly',
+            'Board games'
         ],
         labels: [
-        'Secluded',
-        'Romantic',
-        'Nature',
-        'Pet-friendly'
+            'Secluded',
+            'Romantic',
+            'Nature',
+            'Pet-friendly'
         ],
         host: {
-        _id: 'u401',
-        fullname: 'David Williams',
-        imgUrl: 'https://randomuser.me/api/portraits/men/74.jpg',
+            _id: 'u401',
+            fullname: 'David Williams',
+            imgUrl: 'https://randomuser.me/api/portraits/men/74.jpg',
         },
         loc: {
-        country: 'United States',
-        countryCode: 'US',
-        city: 'Gatlinburg',
-        address: '456 Mountain View Drive',
-        lat: 35.687,
-        lng: -83.533
+            country: 'United States',
+            countryCode: 'US',
+            city: 'Gatlinburg',
+            address: '456 Mountain View Drive',
+            lat: 35.687,
+            lng: -83.533
         },
         reviews: [
-        {
-        id: 'revId3',
-        txt: 'We loved our stay at this cozy cabin! It was the perfect getaway from the hustle and bustle of the city. The hot tub was a wonderful addition and we enjoyed sitting by the fireplace in the evenings.',
-        rate: 5,
-        by: {
-        _id: 'u402',
-        fullname: 'Emily Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/women/62.jpg'
-        }
-        },
-        {
-        id: 'revId4',
-        txt: 'The cabin was nice and clean, but the bed was a bit uncomfortable. Overall, it was a great stay and we would definitely recommend it to others.',
-        rate: 4,
-        by: {
-        _id: 'u403',
-        fullname: 'Michael Davis',
-        imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg'
-        }
-        }
+            {
+                id: 'revId3',
+                txt: 'We loved our stay at this cozy cabin! It was the perfect getaway from the hustle and bustle of the city. The hot tub was a wonderful addition and we enjoyed sitting by the fireplace in the evenings.',
+                rate: 5,
+                by: {
+                    _id: 'u402',
+                    fullname: 'Emily Johnson',
+                    imgUrl: 'https://randomuser.me/api/portraits/women/62.jpg'
+                }
+            },
+            {
+                id: 'revId4',
+                txt: 'The cabin was nice and clean, but the bed was a bit uncomfortable. Overall, it was a great stay and we would definitely recommend it to others.',
+                rate: 4,
+                by: {
+                    _id: 'u403',
+                    fullname: 'Michael Davis',
+                    imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg'
+                }
+            }
         ],
         likedByUsers: ['u501', 'u502'] // for user-wishlist : use $in
-    },{
+    }, {
         _id: '10006548',
         name: 'Cozy Mountain Cabin',
         type: 'Cabin',
@@ -1364,53 +1392,53 @@ const locations = [
         summary: 'Escape to the mountains and relax in this cozy cabin nestled in the heart of the forest. Perfect for couples or small families looking for a peaceful getaway.',
         capacity: 4,
         amenities: [
-        'Wood-burning fireplace',
-        'Hiking trails',
-        'Fully equipped kitchen',
-        'Pet-friendly',
-        'Outdoor fire pit',
-        'Board games'
+            'Wood-burning fireplace',
+            'Hiking trails',
+            'Fully equipped kitchen',
+            'Pet-friendly',
+            'Outdoor fire pit',
+            'Board games'
         ],
         labels: [
-        'Romantic',
-        'Secluded',
-        'Nature',
-        'Pet-friendly'
+            'Romantic',
+            'Secluded',
+            'Nature',
+            'Pet-friendly'
         ],
         host: {
-        _id: 'u401',
-        fullname: 'John Brown',
-        imgUrl: 'https://randomuser.me/api/portraits/men/18.jpg',
+            _id: 'u401',
+            fullname: 'John Brown',
+            imgUrl: 'https://randomuser.me/api/portraits/men/18.jpg',
         },
         loc: {
-        country: 'United States',
-        countryCode: 'US',
-        city: 'Asheville',
-        address: '456 Forest Lane',
-        lat: 35.5738,
-        lng: -82.5420
+            country: 'United States',
+            countryCode: 'US',
+            city: 'Asheville',
+            address: '456 Forest Lane',
+            lat: 35.5738,
+            lng: -82.5420
         },
         reviews: [
-        {
-        id: 'revId3',
-        txt: 'We loved our stay at the cabin! It was so peaceful and quiet, and the forest setting was absolutely beautiful. The cabin was clean and cozy, and the wood-burning fireplace was the perfect touch for chilly nights.',
-        rate: 5,
-        by: {
-        _id: 'u402',
-        fullname: 'Sarah Johnson',
-        imgUrl: 'https://randomuser.me/api/portraits/women/22.jpg'
-        }
-        },
-        {
-        id: 'revId4',
-        txt: 'The only downside was that the driveway was a bit steep and narrow, so it was a bit challenging to navigate in our SUV. But overall, it was a wonderful stay and we would definitely come back!',
-        rate: 4,
-        by: {
-        _id: 'u403',
-        fullname: 'David Lee',
-        imgUrl: 'https://randomuser.me/api/portraits/men/5.jpg'
-        }
-        }
+            {
+                id: 'revId3',
+                txt: 'We loved our stay at the cabin! It was so peaceful and quiet, and the forest setting was absolutely beautiful. The cabin was clean and cozy, and the wood-burning fireplace was the perfect touch for chilly nights.',
+                rate: 5,
+                by: {
+                    _id: 'u402',
+                    fullname: 'Sarah Johnson',
+                    imgUrl: 'https://randomuser.me/api/portraits/women/22.jpg'
+                }
+            },
+            {
+                id: 'revId4',
+                txt: 'The only downside was that the driveway was a bit steep and narrow, so it was a bit challenging to navigate in our SUV. But overall, it was a wonderful stay and we would definitely come back!',
+                rate: 4,
+                by: {
+                    _id: 'u403',
+                    fullname: 'David Lee',
+                    imgUrl: 'https://randomuser.me/api/portraits/men/5.jpg'
+                }
+            }
         ],
         likedByUsers: ['u201', 'u202'] // for user-wishlist : use $in
     }

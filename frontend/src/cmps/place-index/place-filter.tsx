@@ -43,6 +43,16 @@ export function PlaceFilter() {
     function temp() {
 
     }
+    function TempLeft() {
+        return <button className="arrow-left" onClick={temp}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+    }
+    function TempRight() {
+        return <button className="arrow-right" onClick={temp}>
+            <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+    }
 
     return (
         <div className="place-filter">
@@ -51,13 +61,9 @@ export function PlaceFilter() {
                 autoPlay={false}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
 
-                customRightArrow={<button className="arrow-right" onClick={temp}>
-                    <FontAwesomeIcon icon={faChevronRight} />
-                </button>}
+                customRightArrow={<TempRight />}
 
-                customLeftArrow={<button className="arrow-left" onClick={temp}>
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                </button>}
+                customLeftArrow={<TempLeft />}
             >
                 {filters.map((filter, idx) => {
                     return <div className="filter-container" key={idx}>

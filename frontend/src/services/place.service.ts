@@ -1046,8 +1046,7 @@ const locations = [
         }
         ],
         likedByUsers: ['u502', 'u503'] // for user-wishlist : use $in
-    },
-    {
+    },{
         _id: '10006548',
         name: 'Cozy Cabin in the Woods',
         type: 'Cabin',
@@ -1104,6 +1103,64 @@ const locations = [
         }
         ],
         likedByUsers: ['u501', 'u502'] // for user-wishlist : use $in
+    },{
+        _id: '10006548',
+        name: 'Cozy Cabin in the Woods',
+        type: 'Cabin',
+        imgUrls: ['https://a0.muscache.com/im/pictures/32f50cdd-91a3-49da-a08e-17c6a48d22a8.jpg?aki_policy=large', 'https://a0.muscache.com/im/pictures/16e7852f-e94b-4e12-93ad-4a2d52aa4ce9.jpg?aki_policy=large'],
+        price: 120.00,
+        summary: 'Escape the hustle and bustle of city life and relax in this charming cabin nestled in the woods. Perfect for a romantic getaway or a family vacation.',
+        capacity: 4,
+        amenities: [
+        'Fireplace',
+        'Hot tub',
+        'Pet-friendly',
+        'Hiking trails',
+        'Kitchenette',
+        'Board games'
+        ],
+        labels: [
+        'Nature',
+        'Romantic',
+        'Pet-friendly',
+        'Cozy'
+        ],
+        host: {
+        _id: 'u401',
+        fullname: 'Mark Johnson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+        },
+        loc: {
+        country: 'United States',
+        countryCode: 'US',
+        city: 'Big Bear Lake',
+        address: '456 Forest Rd',
+        lat: 34.2439,
+        lng: -116.9114
+        },
+        reviews: [
+        {
+        id: 'revId1',
+        txt: 'My partner and I had a lovely time staying at this cabin. It was cozy and romantic, and the hot tub was a nice touch. Would definitely recommend!',
+        rate: 5,
+        by: {
+        _id: 'u402',
+        fullname: 'Sarah Adams',
+        imgUrl: 'https://randomuser.me/api/portraits/women/45.jpg'
         }
+        },
+        {
+        id: 'revId2',
+        txt: 'The cabin was cute and had everything we needed, but the bed was a bit uncomfortable. Other than that, we enjoyed our stay.',
+        rate: 3,
+        by: {
+        _id: 'u403',
+        fullname: 'Mike Wilson',
+        imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg'
+        }
+        }
+        ],
+        likedByUsers: ['u501', 'u502', 'u503'] // for user-wishlist : use $in
+    },
 
 ]

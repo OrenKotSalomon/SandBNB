@@ -3,10 +3,12 @@ import { AppHeader } from './cmps/app-header'
 import { Routes, Route, Router } from 'react-router'
 import routes from './routes'
 import { AppFooter } from './cmps/app-footer'
+import { utilService } from './services/util.service'
+import { placeService } from './services/place.service'
 
 function App() {
   const [count, setCount] = useState<number>(0)
-
+  placeService.saveLocation()
   return (
     <div className="app">
       <AppHeader />

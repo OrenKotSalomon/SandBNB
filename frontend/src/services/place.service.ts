@@ -1,8 +1,30 @@
 // import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
+import { storageService } from "./async-storage.service"
+import { utilService } from "./util.service"
+
 export const placeService = {
     getPlaces,
-    getFilters
+    getFilters,
+    saveLocation,
+    getById,
+    query,
+}
+
+const LOCATION_DB = 'location'
+
+function query(filterBy: object) {
+    return storageService.query(LOCATION_DB)
+}
+
+function getById(locationId: string) {
+    return storageService.get(LOCATION_DB, locationId)
+    // return httpService.get(`board/${boardId}`)
+}
+
+// for dev use only
+function saveLocation() {
+    const currLocation = utilService.saveToStorage('location', locations)
 }
 
 function getFilters() {
@@ -354,7 +376,6 @@ function getPlaces() {
         }
     ]
 }
-
 // DEMO PLACE JSON
 
 const location = {

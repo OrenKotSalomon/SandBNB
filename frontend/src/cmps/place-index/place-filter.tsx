@@ -50,10 +50,9 @@ export function PlaceFilter() {
                 containerClass="carousel-container"
                 autoPlay={false}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
-                rtl={false}
 
                 customRightArrow={<button className="arrow-right" onClick={temp}>
-                     <FontAwesomeIcon icon={faChevronRight} />
+                    <FontAwesomeIcon icon={faChevronRight} />
                 </button>}
 
                 customLeftArrow={<button className="arrow-left" onClick={temp}>
